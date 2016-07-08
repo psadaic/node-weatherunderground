@@ -18,5 +18,6 @@ function Wunderground(key, city, state) {
   this.hourly = api.hourly;
   this.hourly10day = api.hourly10day;
   this.alerts = api.alerts;
+  this.astronomy = api.astronomy;
 }
 module.exports = Wunderground;
