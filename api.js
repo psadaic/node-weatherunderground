@@ -59,6 +59,7 @@ exports.hourly10day = function(opts, done) {
     return done(null, data.hourly_forecast);
   });
 }
+
 /**
  * Gets severe weather alerts for a specific location
  * @param {Object} opts - optional object that bypasses initting a client
@@ -69,5 +70,17 @@ exports.alerts = function(opts, done) {
   helpers.get(this.url('alerts', opts), function(err, data) {
     if (err) return done(err);
     return done(null, data.alerts);
+  });
+}
+
+/**
+ * Gets moon phase, sunrise and sunset times.
+ * @param {Object} opts - optional object that bypasses initting a client
+ * @param  {Function} callback - returns err, data
+ */
+exports.astronomy = function(opts, done) {
+  helpers.get(this.url('astronomy', opts), function(err, data) {
+    if (err) return done(err);
+    return done(null, data);
   });
 }
